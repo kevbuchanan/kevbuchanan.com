@@ -54,7 +54,7 @@ header {
       color: #fff; }
   header .portrait {
     background-image: url("../img/kevinbw.png");
-    transition: all 1s ease;
+    transition: background 1s ease;
     position: absolute;
     top: 0;
     right: 0;

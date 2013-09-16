@@ -21,7 +21,6 @@ router.on('route:posts', function(){
 })
 
 router.on('route:post', function(id){
-  postList.render()
   postView.render(id)
 })
 
