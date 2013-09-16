@@ -1,0 +1,179 @@
+/* style.scss */
+@font-face {
+  font-family: "icons";
+  src: url("../fonts/Socialico.ttf");
+  src: url("../fonts/Socialico.otf") format("opentype"); }
+
+html {
+  height: 100%; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0;
+  min-height: 100%;
+  margin-bottom: -100px; }
+
+h1, h2 {
+  font-family: 'Oswald', sans-serif;
+  font-variant: small-caps;
+  margin-top: 5px; }
+
+header {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 20px;
+  padding-top: 5px;
+  font-variant: small-caps; }
+  header h1, header h2 {
+    letter-spacing: 3px;
+    font-family: 'Oswald', sans-serif;
+    color: #efede1;
+    text-shadow: 3px 3px #2e1627;
+    margin: 10px;
+    margin-left: 40px; }
+  header h1 {
+    font-size: 3em; }
+  header nav {
+    position: relative;
+    top: 20px;
+    right: 20px; }
+    header nav a {
+      display: inline-block;
+      text-align: center;
+      width: 150px;
+      margin: 0;
+      margin-right: -4px;
+      padding: 10px;
+      background-color: #72a489;
+      color: #fff; }
+  header .portrait {
+    background-image: url("../img/kevinbw.png");
+    transition: all 1s ease;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 204px; }
+  header .portrait:hover {
+    background-image: url("../img/kevin_color.png"); }
+
+header a:visited, header a:link, .sidebar a:visited, .sidebar a:link, .project a:visited, .project a:link {
+  color: #fff;
+  text-decoration: none; }
+header a:hover, .sidebar a:hover, .project a:hover {
+  text-decoration: underline; }
+
+.container {
+  margin: 10px auto;
+  margin-bottom: 0;
+  padding: 10px 40px; }
+  .container h2 {
+    border-bottom: 4px solid #e76d39; }
+  .container .sidebar {
+    margin-bottom: 20px; }
+    .container .sidebar h2 {
+      border-bottom: 4px solid #72a489; }
+    .container .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+    .container .sidebar li {
+      font-size: .8em;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 10px;
+      margin-top: 10px; }
+
+.greeting {
+  margin: 0 auto;
+  width: 800px;
+  text-align: justify;
+  margin-bottom: 110px; }
+  .greeting h2 {
+    text-align: center; }
+
+.resume {
+  margin-bottom: 110px; }
+  .resume a {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px; }
+  .resume a:hover {
+    background-color: rgba(0, 0, 0, 0.7); }
+
+.project {
+  width: 500px;
+  float: left;
+  margin: 40px;
+  margin-top: 0;
+  padding: 20px;
+  background-color: #efede1; }
+  .project h3 {
+    margin-top: 0; }
+  .project .img {
+    height: 280px;
+    width: 500px;
+    background-size: 500px 280px; }
+    .project .img .description {
+      opacity: 0;
+      transition: all 0.8s ease;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      height: 240px;
+      padding: 20px; }
+  .project .img:hover .description {
+    opacity: 1; }
+  .project .api {
+    background-image: url("../img/dbc-api.png"); }
+  .project .dev {
+    background-image: url("../img/dbc-dev.png"); }
+  .project .ruby {
+    background-image: url("../img/dbc-ruby.png"); }
+  .project .survey {
+    background-image: url("../img/sg.png"); }
+
+.sidebar {
+  float: left;
+  width: 300px; }
+
+.post {
+  margin-left: 320px;
+  margin-bottom: 110px; }
+  .post a:visited, .post a:link {
+    color: #e76d39;
+    text-decoration: underline; }
+  .post .quote {
+    text-align: center; }
+  .post .source {
+    text-align: center; }
+
+footer {
+  height: 100px;
+  width: 100%;
+  clear: both;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff; }
+  footer .social {
+    text-align: center;
+    padding-top: 20px; }
+    footer .social a {
+      font-family: 'icons';
+      color: #fff;
+      font-size: 5em;
+      text-decoration: none; }
+    footer .social a:hover {
+      position: relative;
+      bottom: 1px;
+      right: 1px; }
+    footer .social .title {
+      margin-right: 40px; }
+    footer .social .title:last-child {
+      margin-right: 0; }

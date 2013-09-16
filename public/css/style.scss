@@ -1,0 +1,269 @@
+/* style.scss */
+$color1: #e76d39;
+$color2: #efede1;
+$color3: #72A489;
+$sidebar-width: 300px;
+
+@font-face {
+  font-family: "icons";
+  src: url('../fonts/Socialico.ttf');
+  src: url('../fonts/Socialico.otf') format('opentype');
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0;
+  min-height: 100%;
+  margin-bottom: -100px;
+}
+
+h1, h2 {
+  font-family: 'Oswald', sans-serif;
+  font-variant: small-caps;
+  margin-top: 5px;
+}
+
+header {
+  background-color: rgba(0,0,0,.60);
+  color: #fff;
+  padding: 20px;
+  padding-top: 5px;
+  font-variant: small-caps;
+
+  h1, h2 {
+    letter-spacing: 3px;
+    font-family: 'Oswald', sans-serif;
+    color: #efede1;
+    text-shadow: 3px 3px #2e1627;
+    margin: 10px;
+    margin-left: 40px;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  nav {
+    position: relative;
+    top: 20px;
+    right: 20px;
+
+    a {
+      display: inline-block;
+      text-align: center;
+      width: 150px;
+      margin: 0;
+      margin-right: -4px;
+      padding: 10px;
+      background-color: $color3;
+      color: #fff;
+    }
+  }
+
+  .portrait {
+    background-image: url('../img/kevinbw.png');
+    transition: all 1s ease;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 204px;
+  }
+
+  .portrait:hover {
+    background-image: url('../img/kevin_color.png');
+  }
+
+}
+
+header, .sidebar, .project {
+  a:visited, a:link {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.container {
+  margin: 10px auto;
+  margin-bottom: 0;
+  padding: 10px 40px;
+
+  h2 {
+    border-bottom: 4px solid $color1;
+  }
+
+  .sidebar {
+    h2 {
+      border-bottom: 4px solid $color3;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      font-size: .8em;
+      background-color: rgba(0,0,0,.60);
+      color: #fff;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    margin-bottom: 20px;
+  }
+
+}
+
+.greeting {
+  margin: 0 auto;
+  width: 800px;
+  text-align: justify;
+  margin-bottom: 110px;
+
+  h2 {
+    text-align: center;
+  }
+}
+
+.resume {
+  margin-bottom: 110px;
+
+  a {
+    background-color: rgba(0,0,0,.60);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+
+  a:hover {
+    background-color: rgba(0,0,0,.70);
+  }
+}
+
+.project {
+  $project-width: 500px;
+
+  width: $project-width;
+  float: left;
+  margin: 40px;
+  margin-top: 0;
+  padding: 20px;
+  background-color: $color2;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  .img {
+    height: 280px;
+    width: $project-width;
+    background-size: $project-width 280px;
+
+    .description {
+      opacity: 0;
+      transition: all 0.8s ease;
+      background-color: rgba(0,0,0,.80);
+      color: #fff;
+      height: 240px;
+      padding: 20px;
+    }
+  }
+
+  .img:hover .description {
+    opacity: 1;
+  }
+
+  .api {
+    background-image: url('../img/dbc-api.png');
+  }
+
+  .dev {
+    background-image: url('../img/dbc-dev.png');
+  }
+
+  .ruby {
+    background-image: url('../img/dbc-ruby.png');
+  }
+
+  .survey {
+    background-image: url('../img/sg.png');
+  }
+
+}
+
+
+.sidebar {
+  float: left;
+  width: $sidebar-width;
+}
+
+.post {
+  margin-left: $sidebar-width + 20px;
+  margin-bottom: 110px;
+
+  a:visited, a:link {
+    color: $color1;
+    text-decoration: underline;
+  }
+
+  .quote {
+    text-align: center;
+  }
+
+  .source {
+    text-align: center;
+  }
+}
+
+footer {
+  height: 100px;
+  width: 100%;
+  clear: both;
+  background-color: rgba(0,0,0,.60);
+  color: #fff;
+
+  .social {
+    text-align: center;
+    padding-top: 20px;
+
+    a {
+      font-family: 'icons';
+      color: #fff;
+      font-size: 5em;
+      text-decoration: none;
+    }
+
+    a:hover {
+      position: relative;
+      bottom: 1px;
+      right: 1px;
+    }
+
+    .title {
+      margin-right: 40px;
+    }
+
+    .title:last-child {
+      margin-right: 0;
+    }
+  }
+
+}

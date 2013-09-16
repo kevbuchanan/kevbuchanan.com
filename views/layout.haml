@@ -1,0 +1,116 @@
+!!!
+%head
+  %meta{charset: 'utf-8'}/
+
+  %title='Kevin Buchanan'
+
+  %link{rel: 'stylesheet', href: 'css/style.css'}
+  %link{href: 'http://fonts.googleapis.com/css?family=Open+Sans', rel: 'stylesheet', type: 'text/css'}
+  %link{href: 'http://fonts.googleapis.com/css?family=Oswald', rel:'stylesheet', type:'text/css'}
+
+%body
+  %div.wrapper
+    %header
+      = yield
+    %div.container
+  %footer
+    %div.social
+      %a{href: 'http://github.com/kevinbuch'} G
+      %span.title GitHub
+      %a{href: 'http://www.linkedin.com/in/buchanankevin/'} I
+      %span.title LinkedIn
+      %a{href: 'http://twitter.com/kevin__buchanan'} L
+      %span.title Twitter
+  %script#index-template{type: 'text/template'}
+    %div.greeting
+      %h2 Hello
+      %p I'm Kevin. I'm a novice web developer in Chicago. I love making things with code, and I love learning how to do new things with code. For example, this website was built with Backbone.js, a framework that I hadn't worked with before, and the blog shown here is an experiment with the Tumblr API. In the last year, I've learned a lot of new things. I recently graduated from Dev Bootcamp Chicago, so I've learned most of what you see here, plus a lot of other cool stuff, all very recently.
+      %p Some things I've built recently include an API, a Ruby gem, and a survey web app. You can check those out on the Portfolio page. I'm hoping to build upon the knowledge I've gained through those projects by continuing to work with really smart people and tackle new and challenging problems. I'd love to hear from you if you're looking to do the same.
+      %p Outside of writing code, I love to play basketball, ride my bike, read books, and just generally learn new things. I sometimes blog about these interests, and am even less likely to tweet about them, but you can maybe catch a glimpse into some of my interests by checking out either of those sources. Otherwise, I guess you'll just have to wait and hear about it all in person.
+  %script#posts-list-template{type: 'text/template'}
+    %div.sidebar
+      %h2 Posts
+      %ul.post-list
+        [% _.each(posts, function(post) { %]
+        %li
+          %a{href: "#/posts/[%= post.get('id') %]"} [%= post.get('title') || 'Favorite Quotes' %]
+        [% }) %]
+    %div.post
+  %script#post-template{type: 'text/template'}
+    %h2 [%= post.get('title') %]
+    %p [%= post.get('date') %]
+    %p [%= post.get('body') %]
+  %script#quote-template{type: 'text/template'}
+    %h2 Favorite Quotes
+    %p.quote "[%= post.get('text') %]"
+    %p.source - [%= post.get('source') %]
+  %script#portfolio-template{type: 'text/template'}
+    %h2 My Portfolio
+    %div.project
+      %h3 Dev Bootcamp API
+      %div.img.api
+        %div.description
+          %p A RESTful API for Dev Bootcamp's learning management system.
+          %p
+            %a{href: 'http://developer.devbootcamp.com/documentation'} developer.devbootcamp.com/documentation
+          %p
+            %a{href: 'http://github.com/devbootcamp/api'} Source
+    %div.project
+      %h3 Dev Bootcamp Developer
+      %div.img.dev
+        %div.description
+          %p A developer portal for the Dev Bootcamp API providing API documentation, API keys, and OAuth application tokens for authentication with auth.devbootcamp.com.
+          %p
+            %a{href: 'http://developer.devbootcamp.com'} developer.devbootcamp.com
+          %p
+            %a{href: 'http://github.com/devbootcamp/developer'} Source
+    %div.project
+      %h3 dbc-ruby
+      %div.img.ruby
+        %div.description
+          %p A Ruby client gem for the Dev Bootcamp API.
+          %p bundle install 'dbc-ruby'
+          %p
+            %a{href: 'http://github.com/devbootcamp/dbc-ruby'} Source
+    %div.project
+      %h3 Survey Gorilla
+      %div.img.survey
+        %div.description
+          %p A site for creating and taking surveys.
+          %p
+            %a{href: 'http://survey-gorilla-dbc.herokuapp.com/'} survey-gorilla-dbc.herokuapp.com
+          %p
+            %a{href: 'http://github.com/rwarbelow/survey_gorilla'} Source
+  %script#resume-template{type: 'text/template'}
+    %div.resume
+      %h2 My Resume
+      %a{href: '/KBuchananResume0913.pdf', download: 'KBuchananResume0913.pdf'} Download
+      %h3 Profile
+      %p I am a recent graduate of Dev Bootcamp Chicago seeking a junior developer position where I can solve complex problems and continue to learn from those around me. I love being presented with new challenges, especially in code, and this passion for problem-solving has provided me with a high-capacity for thinking critically about possible solutions, and learning quickly enough to implement a chosen solution successfully.
+      %h3 Experience
+      %p Student, Dev Bootcamp Chicago Chicago, IL; June 2013 - September 2013
+      %ul
+        %li Spent 80+ hours a week, for 9 weeks, working with Ruby, Javascript, HTML, CSS, and SQL, using frameworks such as Sinatra and Rails.
+        %li Tested using RSpec, Cabybara, and Jasmine.
+        %li Maintained clean and organized version control and collaboration using Git and GitHub.
+        %li Cultivated good code practices through code reviews and pair programming emphasizing DRY, easily readable, test-driven code.
+      %p Staffing Consultant, IT Project and Financial Controls, CME Group Chicago, IL; November 2012 - March 2013
+      %ul
+        %li Analyzed staffing forecasts and project demands to ensure development teams are appropriately staffed.
+        %li Collaborated with project managers to maintain staffing plans and budgets for various development projects.
+      %p Corporate Procurement Analyst, KLA-Tencor Milpitas, CA; April 2010 - July 2012
+      %ul
+        %li Analyzed $400M annual indirect supply chain spend and multiple metrics to identify cost savings opportunities.
+        %li Assessed proposed terms, negotiated purchases, structured deals, developed SOWs and SLAs, modeled spend forecasting, and drafted contracts to optimize value and mitigate risk for deals ranging from $10k to $2M
+      %h3 Education
+      %p Dev Bootcamp Chicago — June 2013 – September 2013
+      %p Santa Clara University, Santa Clara, CA — B.S. Finance, June 2009
+      Coursework included Statistics, Investments, Corporate Finance, New Venture Finance, Real Estate Finance, and Open Book Management. Completed a Religious Studies minor and earned the Dean’s Scholarship and Preferred Scholarship for academic achievement. Completed extensive additional English, Writing, and Philosophy coursework.
+      %h3 Skills
+      %p Languages - Ruby, Javascript, HTML, CSS, SQL
+      %p Tools - RSpec, Capybara, Jasmine, Git, GitHub, JQuery, OAuth, ActiveRecord, Postgres, Heroku
+      %p Frameworks - Rails, Sinatra, Backbone, Ember
+  %script{src: 'js/lib/jquery-1.10.2.min.js'}
+  %script{src: 'js/lib/underscore-min.js'}
+  %script{src: 'js/lib/backbone-1.0.0.js'}
+  %script{src: 'js/application.js'}
