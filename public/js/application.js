@@ -21,7 +21,12 @@ router.on('route:posts', function(){
 })
 
 router.on('route:post', function(id){
-  postView.render(id)
+  if (postCache.get(id)) {
+    postView.render(id)
+  }
+  else {
+    postList.render(id)
+  }
 })
 
 router.on('route:portfolio', function(){
@@ -78,15 +83,19 @@ var Post = Backbone.Model.extend({
   urlRoot: '/posts'
 })
 
+var postCache = new Posts()
+
 var PostList = Backbone.View.extend({
   el:'.container',
-  render: function(){
+  render: function(id){
     var that = this
     var posts = new Posts()
     posts.fetch({
       success: function(posts){
         var template = _.template($('#posts-list-template').html(), {posts: posts.models})
         that.$el.html(template)
+        postCache = posts
+        postView.render(id || posts.first().get('id'))
       }
     })
   }
@@ -97,19 +106,14 @@ var postList = new PostList()
 var PostView = Backbone.View.extend({
   el:'.container',
   render: function(id){
-    var that = this
-    var post = new Post({id: id})
-    post.fetch({
-      success: function(post){
-        if (post.get('type') == 'quote') {
-          var template = _.template($('#quote-template').html(), {post: post})
-        }
-        else {
-          var template = _.template($('#post-template').html(), {post: post})
-        }
-        that.$el.find('.post').html(template)
-      }
-    })
+    var post = postCache.get(id)
+    if (post.get('type') == 'quote') {
+      var template = _.template($('#quote-template').html(), {post: post})
+    }
+    else {
+      var template = _.template($('#post-template').html(), {post: post})
+    }
+    this.$el.find('.post').html(template)
   }
 })
 
